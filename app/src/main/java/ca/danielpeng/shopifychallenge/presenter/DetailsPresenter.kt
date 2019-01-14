@@ -19,7 +19,7 @@ class DetailsPresenter(val view: DetailsView,
             }
 
             override fun onResponse(results: ArrayList<Product>) {
-
+                view.showProducts(results)
             }
         })
     }
