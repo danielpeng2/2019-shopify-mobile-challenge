@@ -11,6 +11,8 @@ object ShopifyInteractor: ShopifyInteractable {
         "https://shopicruit.myshopify.com/admin/custom_collections.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6"
     private const val TAG_ID = "id"
     private const val TAG_TITLE = "title"
+    private const val TAG_IMAGE = "image"
+    private const val TAG_SOURCE = "src"
     private const val TAG_CUSTOM_COLLECTIONS = "custom_collections"
 
     private val client = OkHttpClient()
@@ -33,7 +35,10 @@ object ShopifyInteractor: ShopifyInteractable {
                 for (i in 0 until jsonArray.length()) {
                     val item = jsonArray.getJSONObject(i)
                     collections.add(
-                        Collection(item.getString(TAG_ID), item.getString(TAG_TITLE))
+                        Collection(
+                            item.getString(TAG_ID),
+                            item.getString(TAG_TITLE),
+                            item.getJSONObject(TAG_IMAGE).getString(TAG_SOURCE))
                     )
                 }
 

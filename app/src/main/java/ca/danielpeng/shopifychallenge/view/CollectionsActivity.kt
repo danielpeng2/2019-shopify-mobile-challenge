@@ -9,6 +9,7 @@ import android.widget.Toast
 import ca.danielpeng.shopifychallenge.R
 import ca.danielpeng.shopifychallenge.model.Collection
 import ca.danielpeng.shopifychallenge.model.ShopifyInteractor
+import ca.danielpeng.shopifychallenge.presenter.CollectionsListener
 import ca.danielpeng.shopifychallenge.presenter.CollectionsPresenter
 import kotlinx.android.synthetic.main.activity_collections.*
 
@@ -32,7 +33,7 @@ class CollectionsActivity : AppCompatActivity(), CollectionsView {
     }
 
     override fun showCollections(collections: ArrayList<Collection>) {
-        viewAdapter = CollectionsAdapter(collections)
+        viewAdapter = CollectionsAdapter(this, collections, presenter)
         runOnUiThread {
             list_collections.apply { adapter = viewAdapter }
         }

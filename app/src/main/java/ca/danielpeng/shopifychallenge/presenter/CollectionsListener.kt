@@ -1,6 +1,8 @@
 package ca.danielpeng.shopifychallenge.presenter
 
+import ca.danielpeng.shopifychallenge.model.Collection
+
 interface CollectionsListener {
 
-    fun onCollectionClicked(id: String)
+    fun onCollectionClicked(collection: Collection)
 }

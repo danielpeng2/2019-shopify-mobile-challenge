@@ -27,7 +27,7 @@ class CollectionsPresenter(val view: CollectionsView, private val interactor: Sh
 
     override fun onDestroy() {}
 
-    override fun onCollectionClicked(id: String) {
+    override fun onCollectionClicked(collection: Collection) {
         // TODO
     }
 }
