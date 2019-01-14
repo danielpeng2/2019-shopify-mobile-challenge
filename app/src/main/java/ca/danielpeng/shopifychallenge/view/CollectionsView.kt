@@ -7,4 +7,5 @@ interface CollectionsView {
 
     fun showCollections(collections: ArrayList<Collection>)
     fun showError(@StringRes errorMessage: Int)
+    fun goToDetails(collection: Collection)
 }

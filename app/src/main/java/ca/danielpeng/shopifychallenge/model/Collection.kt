@@ -1,3 +1,5 @@
 package ca.danielpeng.shopifychallenge.model
 
-data class Collection(val id: String, val name: String, val imageUrl: String)
+import java.io.Serializable
+
+data class Collection(val id: String, val name: String, val imageUrl: String) : Serializable
