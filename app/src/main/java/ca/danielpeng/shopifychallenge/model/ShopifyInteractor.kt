@@ -17,6 +17,7 @@ object ShopifyInteractor : ShopifyInteractable {
     private const val TAG_PRODUCTS = "products"
     private const val TAG_VARIANTS = "variants"
     private const val TAG_INVENTORY_QUANTITY = "inventory_quantity"
+    private const val TAG_BODY_HTML = "body_html"
 
     private val client = OkHttpClient()
 
@@ -42,7 +43,8 @@ object ShopifyInteractor : ShopifyInteractable {
                         Collection(
                             item.getString(TAG_ID),
                             item.getString(TAG_TITLE),
-                            item.getJSONObject(TAG_IMAGE).getString(TAG_SOURCE)
+                            item.getJSONObject(TAG_IMAGE).getString(TAG_SOURCE),
+                            item.getString(TAG_BODY_HTML)
                         )
                     )
                 }
