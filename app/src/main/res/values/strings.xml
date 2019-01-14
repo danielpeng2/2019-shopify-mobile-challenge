@@ -2,4 +2,5 @@
     <string name="app_name">Shopify Challenge</string>
 
     <string name="title_collections">Collections</string>
+    <string name="error_network">Network error</string>
 </resources>

@@ -1,6 +1,6 @@
 package ca.danielpeng.shopifychallenge.presenter
 
-import android.util.Log
+import ca.danielpeng.shopifychallenge.R
 import ca.danielpeng.shopifychallenge.model.Collection
 import ca.danielpeng.shopifychallenge.model.ResponseListener
 import ca.danielpeng.shopifychallenge.model.ShopifyInteractable
@@ -12,11 +12,11 @@ class CollectionsPresenter(val view: CollectionsView, private val interactor: Sh
     override fun onCreate() {
         interactor.getCollections(object : ResponseListener<ArrayList<Collection>> {
             override fun onFailure(e: Exception) {
-
+                view.showError(R.string.error_network)
             }
 
             override fun onResponse(results: ArrayList<Collection>) {
-                Log.d("wf", "dsfs")
+                2 + 2
             }
         })
     }

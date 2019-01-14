@@ -2,6 +2,8 @@ package ca.danielpeng.shopifychallenge.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.annotation.StringRes
+import android.widget.Toast
 import ca.danielpeng.shopifychallenge.R
 import ca.danielpeng.shopifychallenge.model.ShopifyInteractor
 import ca.danielpeng.shopifychallenge.presenter.CollectionsPresenter
@@ -18,5 +20,11 @@ class CollectionsActivity : AppCompatActivity(), CollectionsView {
 
         presenter = CollectionsPresenter(this, ShopifyInteractor)
         presenter.onCreate()
+    }
+
+    override fun showError(@StringRes errorMessage: Int) {
+        runOnUiThread {
+            Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+        }
     }
 }
