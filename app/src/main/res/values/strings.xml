@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Shopify Challenge</string>
+
+    <string name="title_collections">Collections</string>
 </resources>
