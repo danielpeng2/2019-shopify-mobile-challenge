@@ -13,6 +13,10 @@ class DetailsPresenter(val view: DetailsView,
                        val collection: Collection) : Presenter {
 
     override fun onCreate() {
+        view.setTitle(collection.name)
+        view.setDetails(collection.imageUrl, collection.name, collection.bodyText)
+        if (collection.bodyText.isEmpty()) view.hideDetailsBody()
+
         interactor.getProducts(collection.id, object : ResponseListener<ArrayList<Product>> {
             override fun onFailure(e: Exception) {
                 view.showError(R.string.error_network)
